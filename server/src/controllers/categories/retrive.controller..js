@@ -1,7 +1,7 @@
 "use strict"
 
 // Database
-const Category = require("../../services/db/_courses");
+const Category = require("../../models/categories");
 
 const getCategories = async (req, res) => {
   const categories = await Category.find();

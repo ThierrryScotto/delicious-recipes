@@ -4,7 +4,7 @@
 const router = require('./routes/index');
 
 // routes
-const categories   = require('./routes/_categories');
+const categories = require('./routes/_categories');
 
 // constant
 const basePath = '/v1';
