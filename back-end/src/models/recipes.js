@@ -10,7 +10,7 @@ const recipesSchema = new Schema({
   photo_url:    { type: String, required: true },
   time:         { type: String, required: true },
   description:  { type: String, required: true },
-  ingredients:  [ { type: Array, required: true } ],
+  ingredients:  [ { type: Schema.Types.ObjectId, ref: 'ingredients', required: true }, { type: String, required: true } ],
   photosArray:  [ { type: Array, required: false } ]
 });
 
