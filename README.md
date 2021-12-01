@@ -35,5 +35,5 @@ Este projeto está sob a licença do MIT.
 
 Desenvolvido com ♥ por:
 Fernando ...
-Rafaela ...
+Rafela G. Jardim :green_heart:[Linkedin](https://www.linkedin.com/in/rafaela-jardim/)
 Thierry A. Scotto :wave: [Linkedin](https://www.linkedin.com/in/thierry-scotto/)
