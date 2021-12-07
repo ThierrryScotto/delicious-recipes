@@ -1,6 +1,8 @@
 import React from "react"
-import { View, Text, StyleSheet, Image, TouchableOpacity, Button } from "react-native"
+import { View, Text, StyleSheet, Image, TouchableOpacity, Button, Dimensions } from "react-native"
 import { getCategoryName } from "../data/MockDataAPI"
+
+
 
 export default function BodyRecipe(props) {
   const item = props.item;
@@ -28,7 +30,7 @@ export default function BodyRecipe(props) {
         style={styles.button}
         onPress={() => navigation.push("Ingredients", {ingredients: item.ingredients})}
         >
-        <Text style={styles.buttonText}> View Ingredients</Text>
+        <Text style={styles.buttonText}> Ver Ingredientes</Text>
       </TouchableOpacity>
 
       <View style={styles.description}>
@@ -42,8 +44,13 @@ export default function BodyRecipe(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fafafa",
-    alignItems: 'center'
+    backgroundColor: "#FFF",
+    alignItems: 'center',
+    marginTop: -10,
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   title: {
     fontWeight: 'bold',
@@ -51,14 +58,15 @@ const styles = StyleSheet.create({
     color: "#191d1b"
   },
   category: {
-    color: "#1ac06d",
+    color: "#39f0fd",
     fontWeight: 'bold',
     fontSize: 15,
     marginTop: 20,
   }, 
   time: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   }, 
   textTime: {
     marginTop: 12,
@@ -72,14 +80,17 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 300,
     height: 50,
-    borderColor: "#00ff80",
+    backgroundColor: '#000',
+    borderColor: "#FFF",
   }, 
   buttonText: {
-    color: "#00ff80"
+    color: "#FFF"
   },
   description: {
     marginTop: 40,
     width: 350,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
   }
 })

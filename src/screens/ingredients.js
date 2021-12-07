@@ -1,7 +1,10 @@
 import React from "react"
-import { View, Text, FlatList, TouchableHighlight, Image, StyleSheet } from "react-native"
+import { View, Text, FlatList, TouchableHighlight, Image, StyleSheet, Dimensions } from "react-native"
 import { getIngredientUrl } from "../data/MockDataAPI"
 import { getIngredientName } from "../data/MockDataAPI"
+
+
+const win = Dimensions.get('window');
 
 export default function Ingredients({ navigation, route }) {
   let { ingredients }  = route.params;
@@ -10,17 +13,20 @@ export default function Ingredients({ navigation, route }) {
     <View style={styles.container}>
       <FlatList 
         data={ingredients}
-        numColumns={'3'}
+        numColumns={'2'}
         keyExtractor={(index) => index.toString() }
         renderItem={({ item }) => (
           <View style={styles.info}>
             <TouchableHighlight >
               <Image 
-                style={{ height: 100, width: 130, borderRadius: 100}}
+                style={styles.image}
                 source={{ uri: getIngredientUrl(item[0]) }}/>
             </TouchableHighlight>
-            <Text style={styles.nameIngredient}> {getIngredientName(item[0])} </Text>
-            <Text style={styles.amount}> {item[1]} </Text>
+
+            <View>
+              <Text style={styles.nameIngredient}> {getIngredientName(item[0])} </Text>
+              <Text style={styles.amount}> {item[1]} </Text>
+            </View>
           </View>
         )}
       />
@@ -31,13 +37,31 @@ export default function Ingredients({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fafafa"
+    backgroundColor: '#161616',
+    padding: 10
+  },
+  amount: {
+    textAlign: 'center'
+  },
+  nameIngredient: {
+    textAlign: 'center'
   },
   info: {
     marginTop: 30,
     margin: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    width: 135
+    marginHorizontal: 2.5,
+    width:(win.width - 35) / 2,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
   },
+  image: {
+    height: 100, 
+    width: 130, 
+    borderRadius: 100,
+    marginRight: 15,
+    borderRadius: 10,
+    borderWidth: 1,
+  }
 })

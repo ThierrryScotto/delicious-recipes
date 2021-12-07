@@ -8,13 +8,16 @@ import {
   Animated,
   useWindowDimensions,
   TouchableHighlight,
-  Image
+  Image,
+  Dimensions
 } from "react-native";
 
+const win = Dimensions.get('window');
+
 export default function CaroselHeader(props) {
+  const { width: windowWidth } = useWindowDimensions();
   const  item  = props.item;
   const scrollX = useRef(new Animated.Value(0)).current;
-  const { width: windowWidth } = useWindowDimensions();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -39,8 +42,9 @@ export default function CaroselHeader(props) {
         >
           {item.photosArray.map((image, imageIndex) => {
             return (
+              
               <View
-                style={{ width: windowWidth, height: 230 }}
+                style={styles.cardContainer}
                 key={imageIndex}
               >
                 <ImageBackground source={{ uri: image }} style={styles.card} />
@@ -79,19 +83,24 @@ const styles = StyleSheet.create({
   scrollContainer: {
     height: 260,
     alignItems: "center",
-    justifyContent: "center"
+  },
+  cardContainer: {
+    width: win.width, 
+    height: 230
   },
   card: {
     flex: 1,
     overflow: "hidden",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30
   },
   normalDot: {
     height: 8,
     width: 8,
     borderRadius: 5,
-    backgroundColor: "#fafafa",
+    backgroundColor: "#39f0fd",
     marginHorizontal: 4
   },
   indicatorContainer: {

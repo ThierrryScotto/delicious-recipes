@@ -1,9 +1,18 @@
 import React, { useLayoutEffect } from "react"
-import { Text, View, Image, TouchableHighlight, StyleSheet, FlatList } from "react-native"
+import { 
+  Text, 
+  View, 
+  Image, 
+  TouchableHighlight, 
+  StyleSheet, 
+  FlatList,
+  Dimensions 
+} from "react-native"
+
 import { recipes } from "../data/dataArrays.js";
 import { getCategoryById } from "../data/MockDataAPI"
 
-import { Dimensions } from 'react-native';
+
 const win = Dimensions.get('window');
 const ratio = win.width/341; //541 is actual image width
 
@@ -23,6 +32,7 @@ export default function Menu({navigation}) {
           onPress={() => navigation.openDrawer()}
           >
           <Image 
+            style={styles.icon}
             source={require('../assets/icons/menu.png')}
             />
 
@@ -41,11 +51,6 @@ export default function Menu({navigation}) {
     <View style={styles.container}>
         <View style={styles.fullbanner}>
           <Image style={styles.fullbannerImg} source={require('../assets/fullbaner.jpg')} />
-          <View style={styles.overlay}>
-            <Text style={styles.fullbannerTitle}> 
-              Delicious Recipes
-            </Text>
-          </View>
         </View>
         <View style={styles.list}>
           <FlatList  
@@ -55,14 +60,11 @@ export default function Menu({navigation}) {
             keyExtractor={(item) => item.recipeId}
             renderItem={({item}) => (
               <TouchableHighlight 
-                underlayColor="#f1f1f1"
+                underlayColor="#f1f1f140"
                 onPress={() => navigation.push("Recipe", { item: item })}
                 >
                 <View style={styles.containerFlat}>
-                  <Image
-                    style={styles.image} 
-                    source={{ uri:item.photo_url }}
-                  />
+                  <Image style={styles.image} source={{ uri:item.photo_url }} />
                   <Text style={styles.title}> { item.title } </Text>
                   <Text style={styles.category}> {setCategory(item.categoryId)} </Text>
                 </View>
@@ -77,10 +79,10 @@ export default function Menu({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     flexDirection:  'column',
-    backgroundColor: '#39f0fd',
+    backgroundColor: '#161616',
   },
   fullbanner: {
     position: 'relative',
@@ -100,42 +102,42 @@ const styles = StyleSheet.create({
   },
   fullbannerImg: {
     width: f_win.width,
-    height: 140 * f_ratio
+    height: 240 * f_ratio
   },
-  overlay: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection:  'column',
-    position: 'absolute',
-    width: f_win.width,
-    backgroundColor: '#00000070',
-  },
+
   list: {
     backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     marginTop: -10,
     paddingTop: 15,
-    paddingBottom: 175,
+    paddingBottom: 140,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection:  'column',
+    width: '98%'
   },
   listInner: {
-    paddingBottom: 105,
-    height: '100%'
-
+    height: '100%',
   },
   iconeMenu: {
     marginLeft: 10
   },
+  icon: {
+    height: 30,
+    width: 30,
+  },
   containerFlat: {
     borderWidth: 0,
     borderRadius: 13,
-    margin: 10,
+    display: 'flex',
+    margin: 8,
     marginBottom: 20,
+    alignContent: 'stretch',
     backgroundColor: "#FFF",
   }, 
   image: {
-    flex: 1,
     borderTopLeftRadius: 13,
     borderTopRightRadius: 13,
     width: (win.width-40)/2,
