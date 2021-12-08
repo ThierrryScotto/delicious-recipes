@@ -13,6 +13,28 @@ import { recipes } from "../data/dataArrays.js";
 import { getCategoryById } from "../data/MockDataAPI"
 
 
+// fetch('http://localhost:3000/ingredients', {
+
+//     method:'Get',
+//     headers:{
+//         'content-type': 'application/json'
+//     },
+
+//     body: JSON.stringify({
+
+//         name:'user 1'
+//     })
+
+// }).then(res => {
+//     return res.json()
+// })
+// .then((data) => {
+//   console.log(data)
+// })
+// .catch((error) => {
+//   console.log('ERROR')
+// })
+
 const win = Dimensions.get('window');
 const ratio = win.width/341; //541 is actual image width
 
@@ -61,7 +83,7 @@ export default function Menu({navigation}) {
             renderItem={({item}) => (
               <TouchableHighlight 
                 underlayColor="#f1f1f140"
-                onPress={() => navigation.push("Recipe", { item: item })}
+                onPress={() => navigation.navigate("Recipes", { item: item })}
                 >
                 <View style={styles.containerFlat}>
                   <Image style={styles.image} source={{ uri:item.photo_url }} />
@@ -106,9 +128,8 @@ const styles = StyleSheet.create({
   },
 
   list: {
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
     marginTop: -10,
     paddingTop: 15,
     paddingBottom: 140,
@@ -130,7 +151,7 @@ const styles = StyleSheet.create({
   },
   containerFlat: {
     borderWidth: 0,
-    borderRadius: 13,
+    borderRadius: 5,
     display: 'flex',
     margin: 8,
     marginBottom: 20,
@@ -147,12 +168,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: '#3e4843',
     fontWeight: 'bold',
-    fontSize: 15
+    fontSize: 15,
+    marginTop: 10
   },
   category: {
     alignSelf: 'center',
     fontSize: 15,
-    margin: 10,
+    marginBottom: 10,
     padding:6,
     color: "#191d1b",
   }

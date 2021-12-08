@@ -78,9 +78,9 @@ function MenuStackScreen({ navigation }) {
   return (
     <MenuStack.Navigator>
       <MenuStack.Screen  name="Home" component={Home} options={{ title:"Home", headerTransparent:true, headerTitleAlign: 'center', headerTintColor: 'white'  }} />
-      <MenuStack.Screen name="Recipes" component={Recipe} options={{ title:"Recipe", headerTransparent:true }} />
+      <MenuStack.Screen name="Recipes" component={Recipe} options={{ title:"", headerTransparent:true }} />
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe"}} />
-      <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredientss", headerStyle: {backgroundColor: '#39f0fd'}}} />
+      <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredientss", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
 
     </MenuStack.Navigator>
   )
@@ -90,10 +90,10 @@ function CategoriesStackScreen({ navigation }) {
   return (
     
     <MenuStack.Navigator>
-      <MenuStack.Screen name="Categories" component={Categories} />
+      <MenuStack.Screen name="Categories" component={Categories} options={{headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="Recipe" component={Recipe} options={{ title:"", headerTransparent:true }} />
-      <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerStyle: {backgroundColor: '#39f0fd'}}} />
-      <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe"}} />
+      <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
     </MenuStack.Navigator>
   )
 }

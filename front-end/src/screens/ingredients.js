@@ -37,7 +37,7 @@ export default function Ingredients({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#161616',
+    backgroundColor: '#f1f1f140',
     padding: 10
   },
   amount: {

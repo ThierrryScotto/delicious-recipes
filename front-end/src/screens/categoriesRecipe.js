@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection:  'column',
-    backgroundColor: '#161616'
+    backgroundColor: '#f1f1f140'
     
   },
   iconeMenu: {
@@ -74,9 +74,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: "#FFF",
   }, 
-  listInner: {
-
-  },
   image: {  
     flex: 1,
     borderTopLeftRadius: 13,

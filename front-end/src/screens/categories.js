@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   photoFood: {
     borderColor: '#c5c9c7',
-    borderRadius: 4,
+    borderRadius: 5,
     width: win.width,
     height: 110,
   },
@@ -113,14 +113,13 @@ const styles = StyleSheet.create({
     height: 30,
     width: 35,
     borderRadius: 100,
-    backgroundColor: "#fafafa",
     justifyContent: 'center',
     marginLeft: 10,
     alignItems: 'center'
   },
   iconBackArroy: {
-    height: 20,
-    width: 20,
+    height: 30,
+    width: 30,
     padding: 3,
   }
 })

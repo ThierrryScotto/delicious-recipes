@@ -51,6 +51,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
   },
   title: {
     fontWeight: 'bold',

@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     height: 8,
     width: 8,
     borderRadius: 5,
-    backgroundColor: "#39f0fd",
+    backgroundColor: "#FFF",
     marginHorizontal: 4
   },
   indicatorContainer: {

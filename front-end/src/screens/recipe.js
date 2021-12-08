@@ -46,17 +46,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   iconeMenu: {
-    height: 30,
-    width: 35,
+    height: 40,
+    width: 45,
     borderRadius: 100,
-    backgroundColor: "#fafafa",
     justifyContent: 'center',
     marginLeft: 10,
     alignItems: 'center'
   },
   iconBackArroy: {
-    height: 20,
-    width: 20,
+    height: 30,
+    width: 30,
     padding: 3,
   }
 });
