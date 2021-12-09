@@ -36,16 +36,25 @@ export const recipes = [
     title: 'Oatmeal Cookies',
     photo_url: 'https://www.texanerin.com/content/uploads/2019/06/nobake-chocolate-cookies-1-650x975.jpg',
     photosArray: [
-      'https://www.texanerin.com/content/uploads/2019/06/nobake-chocolate-cookies-1-650x975.jpg',
-      "https://namelymarly.com/wp-content/uploads/2018/04/20180415_Beet_Lasagna_10.jpg",
-      'https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width600/img/news_impact/photo/burger-fijpg-57e7e5907630c2ad.jpg',
-      'https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1439,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1492718105/articles/2013/09/24/burger-king-s-new-french-fries-took-ten-years-to-develop/130923-gross-burger-tease_izz59e',
-      'https://aht.seriouseats.com/images/2012/02/20120221-193971-fast-food-fries-Burger-King-fries-2.jpg'
+      "https://www.texanerin.com/content/uploads/2019/06/nobake-chocolate-cookies-1-650x975.jpg",
+      "https://460362-1442130-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2021/02/Vegan_No-Bake_Cookies_04-web.jpg.webp",
+      "https://addapinch.com/wp-content/blogs.dir/3/files/2014/03/chocolate-no-bake-cookies-DSC_2853.jpg",
+      "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/05/soft-oatmeal-chocolate-chip-cookies.jpg",
+      "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2021/03/01/Food/Images/v-essentials-oatmealcookies0003.JPG?t=20170517"
     ],
     time: '15',
-    ingredients: [[0, '200ml'], [1, '5g'], [2, '300g']],
+    ingredients: [
+      [0, '200ml'], 
+      [1, '5g'], 
+      [2, '300g'],
+      [18, '6 tablespoons'],
+      [42, '1/2 cup'],
+      [13, '3/4 cup'],
+      [12, '1/4 cups'],
+      [1, '1/2 teaspoon salt'],
+    ],
     description:
-      '-- Start with cleaned and peeled russet potatoes that you have cut into 3/8-inch match sticks. Place in bowl of very cold water: keep rinsing and changing the water until the water is clear; drain thoroughly and dry with paper towels or a clean lint-free kitchen towel.\n\n -- Meanwhile, you preheat your hot oil to 350 degrees F. Place prepared taters in oil and cook about 5 minutes. They will have that blond-tone color to them. \n\n -- Note: Once you add cold potatoes to the hot oil, the temperature of your oil is going to drop - you want it to be somewhere between 330 - 325 degrees F. \n\n -- Remove from oil; drain and cool. Now - either refrigerate until ready to finish cooking, or cool completely and freeze up to 3 months. To freeze properly - place completely cooled fries in single layer on tray and place in freezer until frozen. Then bag them.\n\n -- To finish cooking - preheat your oil to 400* F. Add your cold fries (which will drop the oil temp - which is fine because you want it near the 375 degrees F. temp) and cook a few minutes until done. Lightly salt them and shake well so that the salt distributes well and they are not salty.'
+      '-- Heat your oven to 350°F (177°C). Line cookie sheets with parchment paper.\n\n -- Combine the chia seeds with the water in a small bowl. Stir and set aside.\n\n -- In a large bowl, beat vegan butter, peanut butter, and sugars. Use an electric mixer on medium speed to whip until creamy. Add the chia seed mixture and stir to combine.\n\n -- In a separate bowl Stir together the flour, cornstarch, baking soda, baking powder, cinnamon salt, oats and raisins.\n\n -- Pour the wet mixture into the flour mixture, and stir until combined.\n\n -- Use a cookie scoop to drop the dough onto prepared cookie sheets, with dough balls spaced at least one inch apart.\n\n -- Bake for 9 to 10 minutes, until golden brown. When done remove from the oven and cool for a few minutes on the cookie sheet before transferring to a wire rack to cool.\n\n -- Store cookies in an airtight container. You can refrigerate these cookies to extend their freshness, up to a week. They can be frozen for up to 2 months.'
   },
   {
     recipeId: 3,
@@ -74,9 +83,9 @@ export const recipes = [
     photo_url: 'https://www.texanerin.com/content/uploads/2018/06/no-bake-lactation-cookies-1-650x975.jpg',
     photosArray: [
       'https://www.texanerin.com/content/uploads/2018/06/no-bake-lactation-cookies-1-650x975.jpg',
-      'https://ichef.bbci.co.uk/news/660/cpsprodpb/B2C0/production/_106106754_vegnuggets976.jpg',
-      'https://pixel.nymag.com/imgs/daily/grub/2017/11/22/22-mcds-chicken-tenders.w330.h330.jpg',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-img.health.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Flarge_16_9%2Fpublic%2Fstyles%2Fmain%2Fpublic%2Fgettyimages-508510211.jpg%3Fitok%3Dh-Uryi8r&w=400&c=sc&poi=face&q=85'
+      "https://theloopywhisk.com/wp-content/uploads/2019/04/Vegan-Chocolate-Chip-Cookies_730px-featured-500x500.jpg",
+      "https://chocolatecoveredkatie.com/wp-content/uploads/2018/05/Vegan-Chocolate-Chip-Cookies-500x500.jpg", 
+      "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/10/vegan-chocolate-cookies-tahini-800x1200.jpg",
     ],
     time: '30',
     ingredients: [
@@ -250,18 +259,31 @@ export const recipes = [
   {
     recipeId: 0,
     categoryId: 0,
-    title: 'Classic Lasagna',
-    photo_url: 'https://namelymarly.com/wp-content/uploads/2018/04/20180415_Beet_Lasagna_10.jpg',
+    title: 'Vegan Mexican Lasagna',
+    photo_url: 'https://460362-1442130-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/02/20190202_Mexican_Lasagna_05-web.jpg',
     photosArray: [
-      "https://namelymarly.com/wp-content/uploads/2018/04/20180415_Beet_Lasagna_10.jpg",
-      'https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width600/img/news_impact/photo/burger-fijpg-57e7e5907630c2ad.jpg',
-      'https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1439,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1492718105/articles/2013/09/24/burger-king-s-new-french-fries-took-ten-years-to-develop/130923-gross-burger-tease_izz59e',
-      'https://aht.seriouseats.com/images/2012/02/20120221-193971-fast-food-fries-Burger-King-fries-2.jpg'
+      "https://460362-1442130-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/02/20190202_Mexican_Lasagna_05-web.jpg",
+      "https://images.media-allrecipes.com/userphotos/7687154.jpg",
+      "https://www.bowlofdelicious.com/wp-content/uploads/2019/06/Mexican-Lasagna-3.jpg",
+      "https://thefitchen.com/wp-content/uploads/2019/11/Vegetarian-Taco-Lasagna-7.jpg"
     ],
     time: '15',
-    ingredients: [[0, '200ml'], [1, '5g'], [2, '300g']],
+    ingredients: [
+      [0, '200ml'], 
+      [1, '5g'], 
+      [2, '300g'], 
+      [7, '1 teaspoon'], 
+      [18, '1/2 cup'], 
+      [34, '1'], 
+      [26, '15 oz'], 
+      [8, '1/2 teaspoons'], 
+      [19, '1 teaspoon'], 
+      [7, '1/8 teaspoons'], 
+      [27, '18 6'],
+      [29, '2 cup']
+    ],
     description:
-      '-- Start with cleaned and peeled russet potatoes that you have cut into 3/8-inch match sticks. Place in bowl of very cold water: keep rinsing and changing the water until the water is clear; drain thoroughly and dry with paper towels or a clean lint-free kitchen towel.\n\n -- Meanwhile, you preheat your hot oil to 350 degrees F. Place prepared taters in oil and cook about 5 minutes. They will have that blond-tone color to them. \n\n -- Note: Once you add cold potatoes to the hot oil, the temperature of your oil is going to drop - you want it to be somewhere between 330 - 325 degrees F. \n\n -- Remove from oil; drain and cool. Now - either refrigerate until ready to finish cooking, or cool completely and freeze up to 3 months. To freeze properly - place completely cooled fries in single layer on tray and place in freezer until frozen. Then bag them.\n\n -- To finish cooking - preheat your oil to 400* F. Add your cold fries (which will drop the oil temp - which is fine because you want it near the 375 degrees F. temp) and cook a few minutes until done. Lightly salt them and shake well so that the salt distributes well and they are not salty.'
+      '-- In a medium skillet over medium heat, sauté onion in oil for 5 minutes until onions are tender. Add garlic, soy crumbles, and fajita seasoning. Stir in water and cornmeal and cook over low heat for 5 minutes. Set aside to cool during the next step.\n\n -- Add tofu, avocado, chickpeas, turmeric, onion powder, garlic powder, and salt to a food processor and pulse until well combined. \n\n -- Spoon some of the salsa into the bottom of a 9×13 ungreased baking pan and top with 6 corn tortillas. Spoon ½ fajita-spiced vegan crumbles over tortillas, followed by ½ avocado mixture. Repeat layers, finishing with remaining salsa, and top with remaining Cheddar shreds.\n\n -- Bake 30 minutes until cheese melts. Remove from oven and let cool for about 20 minutes.\n\n -- Cover and refrigerate for up to 10 days or freeze up to 3 months. To serve, cook in the microwave in 30-second intervals until heated through'
   },
   {
     recipeId: 7,
@@ -398,7 +420,7 @@ export const ingredients = [
     ingredientId: 13,
     name: 'Brown sugar',
     photo_url:
-      'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BALQTtekliuc6iu4u/rotating-brown-sugar-in-a-white-container-on-white-background_sis0xtbyl_thumbnail-full01.png'
+      'https://shriiattachakki.com/wp-content/uploads/Brown-Sugar.jpg'
   },
   {
     ingredientId: 14,
@@ -564,7 +586,7 @@ export const ingredients = [
   {
     ingredientId: 42,
     name: 'Butter',
-    photo_url: 'https://redrockstoffee.com/media/2016/11/AdobeStock_76417550.jpeg'
+    photo_url: 'https://freight.cargo.site/i/37cc760e6c63a6591e874bd90c14f5c22afc16b227817a37310aedd4b5a04507/free-png-butter-png-images-transparent-butter-png-850_559.png'
   },
   {
     ingredientId: 43,
