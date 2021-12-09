@@ -44,14 +44,17 @@ export const recipes = [
     ],
     time: '15',
     ingredients: [
+      [62, '1 1/2 tablespoon'],
       [0, '200ml'], 
-      [1, '5g'], 
+      [1, '5g'],
+      [63, '1 1/2 tablespoon'], 
       [2, '300g'],
       [18, '6 tablespoons'],
       [42, '1/2 cup'],
       [13, '3/4 cup'],
       [12, '1/4 cups'],
-      [1, '1/2 teaspoon salt'],
+      [64, '1/2 cups'],
+      [65, '1/4 cups']
     ],
     description:
       '-- Heat your oven to 350°F (177°C). Line cookie sheets with parchment paper.\n\n -- Combine the chia seeds with the water in a small bowl. Stir and set aside.\n\n -- In a large bowl, beat vegan butter, peanut butter, and sugars. Use an electric mixer on medium speed to whip until creamy. Add the chia seed mixture and stir to combine.\n\n -- In a separate bowl Stir together the flour, cornstarch, baking soda, baking powder, cinnamon salt, oats and raisins.\n\n -- Pour the wet mixture into the flour mixture, and stir until combined.\n\n -- Use a cookie scoop to drop the dough onto prepared cookie sheets, with dough balls spaced at least one inch apart.\n\n -- Bake for 9 to 10 minutes, until golden brown. When done remove from the oven and cool for a few minutes on the cookie sheet before transferring to a wire rack to cool.\n\n -- Store cookies in an airtight container. You can refrigerate these cookies to extend their freshness, up to a week. They can be frozen for up to 2 months.'
@@ -72,7 +75,9 @@ export const recipes = [
     ingredients: [
       [59, '1'],
       [60, '1/2 lbs'],
-      [61, '1/2 liters'],
+      [66, '1/2 lbs'],
+      [67, '1/2 lbs'],
+      [61, '1/2 liters']
     ],
     description: 'In a blender, combine all ingredients and blend until smooth. Then divide between 2 cups and top with blackberries, if desired.'
   },
@@ -89,19 +94,20 @@ export const recipes = [
     ],
     time: '30',
     ingredients: [
-      [0, '2 quarts'],
-      [16, '1'],
-      [12, '1 cup'],
-      [18, '1 cup'],
+      [55, '1/2 cup'],
+      [13, '3/4 cup'],
       [19, '1 teaspoon'],
       [1, '2 teaspoons'],
-      [4, '1/4 teaspoons'],
-      [7, '1/8 teaspoons'],
-      [20, '1/2 teaspoons'],
-      [21, '4']
+      [0, '1/2 cup'],
+      [44, '1/4 cup'],
+      [68, '1 teaspoons'],
+      [12, '1 1/2 teaspoons'],
+      [69, '4 oz'],
+      [69, '4 oz dark chocolate'],
+      [20, '1/2 teaspoon']
     ],
     description:
-      '-- Beat the egg and then combine it with water in a bowl. Stir. \n\n -- Combine the flour, salt, MSG, pepper, onion powder and garlic powder in a gallon size zip lock bag. \n\n -- Pound each of the breast filets until about 1/4-inch thick. Then cut into bite sized pieces. \n\n -- Coat each piece with the flour mixture by shaking in the zip lock bag. \n\n -- Remove and coat in the egg mixture. Then coat in the flour mixture again. Shake to coat. \n\n -- Deep fry at 375 degrees for 10-12 minutes, until browned and crispy.'
+      '-- In a large bowl, whisk together the sugar, brown sugar, salt, and coconut oil until combined. \n\n -- Whisk in non-dairy milk and vanilla, until all sugar has dissolved and the batter is smooth. \n\n -- Sift in the flour and baking soda, then fold the mixture with a spatula, being careful not to overmix. \n\n -- Fold in the chocolate chunks evenly. \n\n -- Chill the dough for at least 30 minutes. \n\n -- Preheat oven to 350°F (180°C). \n\n -- Scoop the dough with an ice cream scoop onto a parchment paper-lined baking sheet. Be sure to leave at least 2 inches of space between cookies and the edges of the pan so cookies can spread evenly. \n\n -- Bake for 12-15 minutes, or until cookies just begin to brown. \n\n -- Cool completely.'
   },
   {
     recipeId: 3,
@@ -117,22 +123,22 @@ export const recipes = [
     ],
     time: '45',
     ingredients: [
-      [0, '2 tablespoons'],
-      [22, '1/2'],
-      [23, '2 tablespoons'],
-      [7, '2 cloves'],
-      [3, '1 teaspoon'],
-      [24, '1 tablespoon'],
-      [25, '1 lb'],
+      [55, '1/2 cup'],
+      [70, '1/2 cup'],
+      [16, '2'],
+      [13, '3/4 cup'],
+      [19, '1 teaspoon'],
       [1, '2 teaspoons'],
-      [4, '2 teaspoons'],
-      [26, '15 oz'],
-      [27, '8'],
-      [28, '2'],
-      [29, '1 cup']
+      [0, '1/2 cup'],
+      [44, '1/4 cup'],
+      [68, '1 teaspoons'],
+      [12, '1 1/2 teaspoons'],
+      [69, '4 oz'],
+      [69, '4 oz dark chocolate'],
+      [20, '1/2 teaspoon']
     ],
     description:
-      '-- In a medium pot over medium heat, heat 1 tablespoon oil. Add onion and cook until soft, 5 minutes. Add garlic and cook until fragrant, 1 minute more. Add tomato paste and stir to coat onion and garlic. Add ground beef and cook, breaking up meat with a wooden spoon, until no longer pink, 6 minutes. Drain fat.\n\n -- Return beef to pot and season with chili powder, paprika, salt, and pepper. Add tomato sauce and kidney beans. Bring to a boil, then reduce heat and let simmer 15 minutes. Add some chili to center of each tortilla, leaving room to fold in edges. Top with Fritos, then cheddar. Fold edges of tortillas toward the center, creating pleats. Invert Crunchwraps so pleats are on the bottom and stay together.\n\n -- In medium skillet over medium heat, heat remaining tablespoon oil. Add a Crunchwrap seam side down and cook until tortilla is golden, 3 to 5 minutes per side. Repeat with remaining Crunchwraps'
+      '-- Blot the pumpkin. After ridding some moisture, you’ll have a little less than 1 and 1/2 cups of pumpkin– I usually have about 1 and 1/3 cups (315g). Using anywhere between 1.33 and 1.5 cups of pumpkin is fine. \n\n -- Get your oven preheated. Prepare your baking sheets with parchment paper or silicone baking mats. I swear by these mats! You can learn more in my 5 Cookie Baking Tips video and here’s how to clean silicone baking mats. \n\n -- Whisk dry ingredients. You need flour, baking powder, baking soda, salt, pumpkin pie spice, cinnamon, and ground ginger. Pumpkin pie spice contains cinnamon and ginger, but I like adding more of both and know you’ll enjoy the extra flavor too. \n\n -- Mix the wet ingredients. You need an electric mixer for this recipe. Cream the butter and sugars together, then add the egg. Next add a splash of maple syrup to help thin out the dough, a little vanilla extract, and your blotted pumpkin. Mixture will look a little curdled at this point. Don’t fret, that’s normal. \n\n -- Mix the dry and wet ingredients together. Dough is thick and sticky, so I strongly recommend using a cookie scoop. The medium size is perfect because each dough ball should be around 1.5 Tablespoons of dough. \n\n -- Bake until the edges appear set. And here’s my tip for cooling: the longer the cookies cool, the better their flavor. It’s nearly impossible to wait before tasting one but just know that the flavors intensify after a day.'
   },
   {
     recipeId: 1,
@@ -147,25 +153,21 @@ export const recipes = [
     ],
     time: '30',
     ingredients: [
-      [1, '2 tablespoons'],
-      [3, '1 tablespoon'],
-      [4, '1 teaspoon'],
-      [5, '1/2 teaspoons'],
-      [6, '1/2 teaspoons'],
-      [7, '1/2 teaspoons'],
-      [8, '1/2 teaspoons'],
-      [9, '1/2 teaspoons'],
-      [10, '1/2 teaspoons'],
-      [11, '1/2 teaspoons'],
-      [12, '1/2 cups'],
-      [13, '1 tablespoon'],
-      [14, '1 tablespoon'],
-      [15, '2 breasts, 2 thighs, 2 drumsticks, 2 wings'],
-      [16, '1'],
-      [17, '2 quarts']
+      [55, '1/2 cup'],
+      [71, '1/2 cup'],
+      [16, '2'],
+      [13, '3/4 cup'],
+      [1, '2 teaspoons'],
+      [0, '1/2 cup'],
+      [44, '1/4 cup'],
+      [68, '1 teaspoons'],
+      [12, '1 1/2 teaspoons'],
+      [69, '4 oz'],
+      [69, '4 oz dark chocolate'],
+      [20, '1/2 teaspoon']
     ],
     description:
-      '-- Preheat fryer to 350°F. Thoroughly mix together all spices. Combine spices with flour, brown sugar and salt. Dip chicken pieces in egg white to lightly coat them, then transfer to flour mixture. Turn a few times and make sure the flour mix is really stuck to the chicken.\n\n -- Repeat with all the chicken pieces. Let chicken pieces rest for 5 minutes so crust has a chance to dry a bit. Fry chicken in batches. Breasts and wings should take 12-14 minutes, and legs and thighs will need a few more minutes. Chicken pieces are done when a meat thermometer inserted into the thickest part reads 165°F. Let chicken drain on a few paper towels when it comes out of the fryer. Serve hot.'
+      '-- 2 eggs + water – You can use a bit of water with the eggs to achieve the moist, gooey texture of boxed mix brownies without any commercial emulsifiers. And because this recipe doesn’t contain any baking powder, eggs are essential for helping the brownies puff up in the oven. \n\n -- Powdered sugar – The trick to making homemade brownies that are just like ones from a box! Powdered sugar contains cornstarch, which helps thicken the batter without the chemical additives you’d find in a mix. \n\n -- Unsweetened cocoa powder – Michelle recommends using Hershey’s Special Dark Dutch-processed cocoa powder (I used Whole Foods’ 365 Cocoa Powder). Make sure to sift it if it’s lumpy! \n\n -- Oil – While many recipes for brownies use unsalted butter, Michelle’s calls for canola oil, just like the boxed mix. I use olive oil because it’s what I keep on hand, and I love the rich flavor. \n\n -- Vanilla Extract – 1/2 teaspoon vanilla really amps up the chocolate flavor.'
   },
   {
     recipeId: 4,
@@ -698,5 +700,65 @@ export const ingredients = [
     name: 'Greek Yogurt',
     photo_url:
       'http://images.media-allrecipes.com/userphotos/960x960/3758635.jpg'
+  },
+  {
+    ingredientId: 62,
+    name: 'Chia Seeds',
+    photo_url:
+    'https://media.istockphoto.com/photos/chia-seeds-picture-id1172115860?b=1&k=20&m=1172115860&s=170667a&w=0&h=P2CaLrcAXl8qk6-7x0zFYySxPdXHqYsKvndyzRfHPZ0='
+  },
+  {
+    ingredientId: 63,
+    name: 'Peanut Butter',
+    photo_url:
+    'https://www.cozinhatecnica.com/wp-content/uploads/2019/02/pasta-de-amendoim-CAPA.jpg'
+  },
+  {
+    ingredientId: 64,
+    name: 'Oats',
+    photo_url:
+    'https://post.healthline.com/wp-content/uploads/2020/03/oats-oatmeal-732x549-thumbnail.jpg'
+  },
+  {
+    ingredientId: 65,
+    name: 'Raisins',
+    photo_url:
+    'https://www.drfuhrman.com/cdn-cgi/image/anim=false,f=auto,fit=scale-down,onerror=redirect,w=1156/rollups/bbf21a342aa65506717cbf58e40177621ac78829ab5866dbea26f69c1c85e5cb.jpg'
+  },
+  {
+    ingredientId: 66,
+    name: 'Raspberry',
+    photo_url:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx9Z9W34NdfLWvpgrdxr9OBVqzs2-uFQzHidxMfrUfpzr6QICd2KcaSA87fu01ptYi7oY&usqp=CAU'
+  },
+  {
+    ingredientId: 67,
+    name: 'BlueBerry',
+    photo_url:
+    'https://images.squarespace-cdn.com/content/v1/5b8edfa12714e508f756f481/1538598121644-P3XKXM9Y3QHNIEPQ56JU/blueberry.jpg?format=1000w'
+  },
+  {
+    ingredientId: 68,
+    name: 'Vanilla',
+    photo_url:
+    'https://brownthumbmama.com/wp-content/uploads/2012/06/bottles-beans-OPT.jpg'
+  },
+  {
+    ingredientId: 69,
+    name: 'Chocolate',
+    photo_url:
+    'https://cdn.shopify.com/s/files/1/1709/6425/products/chips-70-silo_480x480.jpg?v=1612798262'
+  },
+  {
+    ingredientId: 70,
+    name: 'Pumpkin',
+    photo_url:
+    'http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcTCAxjByHe7g8Pf6QA5gKnhrhjG-W_GcvRyN8x6W2xyqttc6MpyNjPwjN9uDjgke6-d7QPH35NS4hRpyqJsn-U'
+  },
+  {
+    ingredientId: 71,
+    name: 'Cocoa Powder',
+    photo_url:
+    'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRGUu5H1Deh5qkPmGB5frLINEIo4PEohsx3atSVPl-wLkTHXlxfiRGCZuJZB5pzqrW3If9KwlwI5YwOH2RG_wM'
   },
 ];
