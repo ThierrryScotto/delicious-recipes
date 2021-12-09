@@ -25,7 +25,7 @@ export const categories = [
   {
     id: 0,
     name: 'Pizza',
-    photo_url: 'https://amp.businessinsider.com/images/5c084bf7bde70f4ea53f0436-750-563.jpg'
+    photo_url: 'https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/pizza.jpg'
   },
 ];
 
@@ -37,7 +37,7 @@ export const recipes = [
     photo_url: 'https://www.texanerin.com/content/uploads/2019/06/nobake-chocolate-cookies-1-650x975.jpg',
     photosArray: [
       "https://www.texanerin.com/content/uploads/2019/06/nobake-chocolate-cookies-1-650x975.jpg",
-      "https://460362-1442130-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2021/02/Vegan_No-Bake_Cookies_04-web.jpg.webp",
+      "https://assets.bonappetit.com/photos/57c86e2bb4ceec812a59c8ac/master/pass/best-oatmeal-raisin-cookies.jpg",
       "https://addapinch.com/wp-content/blogs.dir/3/files/2014/03/chocolate-no-bake-cookies-DSC_2853.jpg",
       "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/05/soft-oatmeal-chocolate-chip-cookies.jpg",
       "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2021/03/01/Food/Images/v-essentials-oatmealcookies0003.JPG?t=20170517"
@@ -111,9 +111,9 @@ export const recipes = [
       'https://www.texanerin.com/content/uploads/2018/11/pumpkin-spice-cookies-4-650x975.jpg',
     photosArray: [
       'https://www.texanerin.com/content/uploads/2018/11/pumpkin-spice-cookies-4-650x975.jpg',
-      'https://cdn.junglecreations.com/wp/junglecms/2018/07/4164c5bd-wide-thumbnail.jpg',
-      'https://pinchofyum.com/wp-content/uploads/Crunchwrap-Inside.jpg',
-      'https://monsonmadethis.com/wp-content/uploads/2017/10/IMG_20171015_161017_025-e1533869302263.jpg'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRriLVf3xoY5nUUFzb3n-uR9SzvpbkdQeHkig&usqp=CAU',
+      'https://www.lovefromtheoven.com/wp-content/uploads/2020/08/soft-lofthouse-pumpkin-cookies-7.jpg',
+      'https://inbloombakery.com/wp-content/uploads/2021/09/pumpkin-cookies-3-1-819x1024.jpg'
     ],
     time: '45',
     ingredients: [
@@ -141,9 +141,9 @@ export const recipes = [
     photo_url: 'https://www.texanerin.com/content/uploads/2018/01/coconut-flour-brownies-1-650x975.jpg',
     photosArray: [
       'https://www.texanerin.com/content/uploads/2018/01/coconut-flour-brownies-1-650x975.jpg',
-      'https://images-gmi-pmc.edge-generalmills.com/6fbc6859-e2b1-499d-b0fa-ada600c9cc3f.jpg',
-      'http://www.recipe4living.com/assets/itemimages/400/400/3/83c29ac7418067c2e74f31c8abdd5a43_477607049.jpg',
-      'https://www.franchisechatter.com/wp-content/uploads/2014/08/KFC-Photo-by-James.jpg'
+      'https://www.sabornamesa.com.br/media/k2/items/cache/3ae7ed6dc1e285ef778f4f2d7f0bc247_XL.jpg',
+      'https://www.sabornamesa.com.br/media/k2/items/cache/dfa7f6322712614e6e049fc346875c0a_L.jpg',
+      'https://www.cozinhatecnica.com/wp-content/uploads/2019/10/brownie.jpg'
     ],
     time: '30',
     ingredients: [
@@ -175,7 +175,7 @@ export const recipes = [
     photosArray: [
       'http://d2814mmsvlryp1.cloudfront.net/wp-content/uploads/2014/04/WGC-Fish-Tacos-copy-2.jpg',
       'https://thecozyapron.com/wp-content/uploads/2018/03/baja-fish-tacos_thecozyapron_1.jpg',
-      'https://www.simplyrecipes.com/wp-content/uploads/2017/06/2017-07-22-FishTacos-6.jpg'
+      'https://kristineskitchenblog.com/wp-content/uploads/2021/04/fish-tacos-1200-square-747.jpg'
     ],
     time: '35',
     ingredients: [
@@ -292,7 +292,7 @@ export const recipes = [
     photo_url: 'https://truffle-assets.imgix.net/655ce202-862-butternutsquashcarbonara-land.jpg',
     photosArray: [
       'https://ak3.picdn.net/shutterstock/videos/10431533/thumb/10.jpg',
-      'https://www.kcet.org/sites/kl/files/styles/kl_image_large/public/thumbnails/image/square_hero_desktop_2x_sfs_spaghetti_carbonara_clr-3.jpg?itok=T-rsBDIZ',
+      'https://i.ytimg.com/vi/rY4mz5TLtz4/maxresdefault.jpg',
       'https://cdn-image.foodandwine.com/sites/default/files/HD-201104-r-spaghetti-with-anchovy.jpg'
     ],
     time: 15,
