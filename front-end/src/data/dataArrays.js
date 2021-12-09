@@ -101,7 +101,7 @@ export const recipes = [
       [21, '4']
     ],
     description:
-      '-- Beat the egg and then combine it with water in a bowl. Stir. Combine the flour, salt, MSG, pepper, onion powder and garlic powder in a gallon size zip lock bag. Pound each of the breast filets until about 1/4-inch thick. Then cut into bite sized pieces. Coat each piece with the flour mixture by shaking in the zip lock bag. Remove and coat in the egg mixture. Then coat in the flour mixture again. Shake to coat. Deep fry at 375 degrees for 10-12 minutes, until browned and crispy.'
+      '-- Beat the egg and then combine it with water in a bowl. Stir. \n\n -- Combine the flour, salt, MSG, pepper, onion powder and garlic powder in a gallon size zip lock bag. \n\n -- Pound each of the breast filets until about 1/4-inch thick. Then cut into bite sized pieces. \n\n -- Coat each piece with the flour mixture by shaking in the zip lock bag. \n\n -- Remove and coat in the egg mixture. Then coat in the flour mixture again. Shake to coat. \n\n -- Deep fry at 375 degrees for 10-12 minutes, until browned and crispy.'
   },
   {
     recipeId: 3,
@@ -375,13 +375,13 @@ export const ingredients = [
   {
     ingredientId: 5,
     name: 'Celery salt',
-    photo_url: 'https://www.hasiroglugurme.com/images/urunler/Koftelik-Esmer-Bulgur-resim-297.jpg'
+    photo_url: 'https://www.spicejungle.com/media/catalog/product/cache/77bee113a8ac4baedd074d0e50f9761e/c/e/celery-salt_1.jpg'
   },
   {
     ingredientId: 6,
     name: 'Dried sage',
     photo_url:
-      'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Esxjvv7/super-slow-motion-dried-sage-falling-on-white-background_n1xg2gxzg__F0000.png'
+      'https://cdn.shopify.com/s/files/1/0491/7890/2688/products/Dried-Sage-Herb_600x.png?v=1616376276'
   },
   {
     ingredientId: 7,
@@ -393,7 +393,7 @@ export const ingredients = [
     ingredientId: 8,
     name: 'Ground allspice',
     photo_url:
-      'https://www.savoryspiceshop.com/content/mercury_modules/cart/items/2/6/9/2695/allspice-berries-jamaican-ground-1.jpg'
+      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F10%2FBHG20Sept20spice-04_5763911bf220Allspice20Photo20by20Meredith20650x452.jpg'
   },
   {
     ingredientId: 9,
@@ -426,7 +426,7 @@ export const ingredients = [
     ingredientId: 14,
     name: 'Kosher salt',
     photo_url:
-      'https://d1yn1kh78jj1rr.cloudfront.net/image/preview/r64-6MxPQjlatyfjp/storyblocks-top-view-of-ceramic-salt-cellar-with-coarse-grained-sea-salt-isolated-on-white-background_SPzKionPuV_SB_PM.jpg'
+      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F01%2F08%2FGettyImages-1291435922-2000.jpg'
   },
   {
     ingredientId: 15,
@@ -496,7 +496,7 @@ export const ingredients = [
     ingredientId: 26,
     name: 'Can kidney beans, rinsed and drained ',
     photo_url:
-      'https://www.seriouseats.com/images/2014/04/20140414-pile-of-beans-primary-1500x1125.jpg'
+      'https://cdn.shopify.com/s/files/1/0079/6177/2150/products/red_20kidney_20bean_20canned_1200x1200.jpg?v=1629875306'
   },
   {
     ingredientId: 27,
@@ -542,7 +542,7 @@ export const ingredients = [
     ingredientId: 34,
     name: 'Avocado',
     photo_url:
-      'https://www.redwallpapers.com/public/redwallpapers-large-thumb/avocado-cut-stone-leaves-white-background-free-stock-photos-images-hd-wallpaper.jpg'
+      'https://static3.tcdn.com.br/img/img_prod/350075/muda_de_abacate_avocado_hass_feita_de_enxerto_12389_1_20200302171715.png'
   },
   {
     ingredientId: 35,
@@ -553,7 +553,7 @@ export const ingredients = [
   {
     ingredientId: 36,
     name: 'Onions',
-    photo_url: 'http://www.allwhitebackground.com/images/2/2650.jpg'
+    photo_url: 'https://i5.walmartimages.com/asr/33813ffc-7fc4-4ff5-8667-897307ca4054_3.c1faf49fe38fb5e447847773284aaafd.jpeg'
   },
   {
     ingredientId: 37,
