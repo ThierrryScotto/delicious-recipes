@@ -1,3 +1,5 @@
+"use strict"
+
 const bcrypt = require('bcrypt'); 
 
 module.exports.compare = async (password, userPassword) => {
