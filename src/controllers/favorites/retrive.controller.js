@@ -11,19 +11,13 @@ const getFavorites = async (req, res) => {
     return res.status(400).send({ message: `UserId field is required` });
   }
 
-  const favorites = await Favorites.find({ userId }).populate('users').exec();
+  const favorites = await Favorites.find({ userId }).populate({ path: 'recipeId' });
 
   if (!favorites) {
     return res.status(404).send({ message: "favorites not found" });
   }
 
-  let response = { userId: userId, recipes: [] };
-
-  for (let favorite in favorites) {
-    response.recipes.push(await Recipes.findOne({ _id: favorites[favorite].recipeId }))
-  }
-
-  return res.status(200).send(response);
+  return res.status(200).send(favorites);
 }
 
 const getFavoriteById = async (req, res) => {
