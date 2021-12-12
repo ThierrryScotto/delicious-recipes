@@ -11,7 +11,7 @@ const favoritesRetriveController  = require('../controllers/favorites/retrive.co
 const checkToken = require('../middleware/authorizer.middleware')
 
 express.router.post('/favorites', checkToken, favoritesPersisteController.addFavorites);
-express.router.get('/favorites', checkToken, favoritesRetriveController.getFavorites);
+express.router.get('/favorites/:userId', checkToken, favoritesRetriveController.getFavorites);
 express.router.get('/favorites/:favoriteId', checkToken, favoritesRetriveController.getFavoriteById);
 
 module.exports = express.router;

@@ -2,15 +2,28 @@
 
 // Database
 const Favorites = require("../../models/favorites");
+const Recipes   = require("../../models/recipes");
 
 const getFavorites = async (req, res) => {
-  const favorites = await Favorites.find();
+  const { userId } = req.params;
+
+  if (!userId) {
+    return res.status(400).send({ message: `UserId field is required` });
+  }
+
+  const favorites = await Favorites.find({ userId }).populate('users').exec();
 
   if (!favorites) {
     return res.status(404).send({ message: "favorites not found" });
   }
 
-  return res.status(200).send(favorites);
+  let response = { userId: userId, recipes: [] };
+
+  for (let favorite in favorites) {
+    response.recipes.push(await Recipes.find({ _id: favorites[favorite].recipeId }))
+  }
+
+  return res.status(200).send(response);
 }
 
 const getFavoriteById = async (req, res) => {
