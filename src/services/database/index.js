@@ -10,12 +10,7 @@ class DBClass {
   }
 
   async connection() {
-    await this.mongoose.connect(process.env.DB_CONNECTION, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true
-    });
+    await this.mongoose.connect(process.env.DB_CONNECTION);
   }
 }
 
