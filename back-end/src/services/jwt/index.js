@@ -7,7 +7,7 @@ const decode = require('jsonwebtoken/decode');
 
 module.exports.generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWTSECRET, {
-    expiresIn: 86400,
+    expiresIn: process.env.JWT_EXPIRES_IN || "1 day"
   })
 }
 
