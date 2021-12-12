@@ -11,7 +11,7 @@ const getFavorites = async (req, res) => {
     return res.status(400).send({ message: `UserId field is required` });
   }
 
-  const favorites = await Favorites.find({ userId }).populate({ path: 'recipeId' });
+  const favorites = await Favorites.find({ userId }).populate({ path: 'recipes' });
 
   if (!favorites) {
     return res.status(404).send({ message: "favorites not found" });
