@@ -20,7 +20,7 @@ const getFavorites = async (req, res) => {
   let response = { userId: userId, recipes: [] };
 
   for (let favorite in favorites) {
-    response.recipes.push(await Recipes.find({ _id: favorites[favorite].recipeId }))
+    response.recipes.push(await Recipes.findOne({ _id: favorites[favorite].recipeId }))
   }
 
   return res.status(200).send(response);
