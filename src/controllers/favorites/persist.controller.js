@@ -26,25 +26,39 @@ const addFavorites = async (req, res) => {
     }
 
     const favoriteExists = await isAlreadyFavorite(userId, recipeId);
-
+    let response;
 
     if (favoriteExists) {
-      return res.status(400).send({ message: `The recipe ${recipeId} has already been added to favorites` });
+      let exist;
+
+      favoriteExists.recipes.map((recipe) => {
+        if (recipe.toString() === recipeId) {
+          exist = true;
+        }
+      });
+
+      if (exist) {
+        return res.status(400).send({ message: `The recipe ${recipeId} has already been added to favorites` });
+      }
+
+      favoriteExists.recipes.push(recipeId);
+      favoriteExists.save();
+      response = favoriteExists;
+    } else {
+      response = await Favorite.create({ userId: userId, recipes: recipeId });
     }
 
-    let response = await Favorite.create({ userId: userId, recipeId: recipeId });
-
-    return res.status(200).send({ response });
+    return res.status(200).send(response);
   } catch(error) {
     console.log('Error: ', error);
     return res.status(500).send({ message: "Internal error" });
   }
 };
 
-async function isAlreadyFavorite(userId, recipeId) {
-  const favorite = await Favorite.findOne({ userId, recipeId })
+async function isAlreadyFavorite(userId) {
+  const favorite = await Favorite.findOne({ userId })
 
-  return favorite ? true : false;
+  return favorite;
 }
 
 module.exports = {
