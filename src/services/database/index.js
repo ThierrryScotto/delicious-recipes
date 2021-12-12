@@ -1,3 +1,5 @@
+"use strict"
+
 require('dotenv').config();
 const mongoose = require('mongoose');
 
@@ -8,7 +10,12 @@ class DBClass {
   }
 
   async connection() {
-    await this.mongoose.connect(process.env.DB_CONNECTION);
+    await this.mongoose.connect(process.env.DB_CONNECTION, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true
+    });
   }
 }
 
