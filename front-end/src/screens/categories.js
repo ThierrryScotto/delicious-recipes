@@ -1,13 +1,30 @@
-import React, { useLayoutEffect } from "react"
+import React, { useLayoutEffect,  useEffect, useState  } from "react"
 import { View, Text, Image, TouchableHighlight, FlatList, StyleSheet } from "react-native"
-import { categories, recipes } from "../data/dataArrays"
-
+// import { categories, recipes } from "../data/dataArrays"
+import axios from 'axios';
 import { Dimensions } from 'react-native';
+
 const win = Dimensions.get('window');
 const ratio = win.width/500; //541 is actual image width
 
+const url_categorias = 'https://delicious-recipes-dev.herokuapp.com/v1/categories'
+const url_ingredientes = 'https://delicious-recipes-dev.herokuapp.com/v1/ingredients'
+const url_receitas = 'https://delicious-recipes-dev.herokuapp.com/v1/recipes'
+
 
 export default function Categories({ navigation }) {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get(url_categorias)
+      .then(({ data }) => {
+        setData(data)
+      })
+      .catch((error) => console.error(error))
+      
+  }, []);
+
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -23,30 +40,38 @@ export default function Categories({ navigation }) {
     });
   }, [navigation]);
 
-  function countNumberRecipe(id) {
-    let numberRecipe = 0;
-    recipes.map(value => { 
-      if (id === value.categoryId)
-      numberRecipe++;
-    })
-    return numberRecipe;
+  async function countNumberRecipe(id) {
+      let numberRecipe = 0;
+
+      try {
+        const recipes = await axios.get(url_receitas)
+
+        recipes.data.map(value => { 
+          if (id === value.categoryId)
+          numberRecipe++;
+        })
+      } catch (error) {
+          console.error('error',error);
+      }
+      
+      return numberRecipe;
   }
 
   return (
     <View style={styles.container}>
       <FlatList 
-        data={categories}
+        data={data}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => (
           <TouchableHighlight 
-            onPress={() => navigation.push("CategoriesRecipe", { categoryId: item.id, headerName:item.name })} 
+            onPress={() => navigation.push("CategoriesRecipe", { categoryId: item._id, headerName:item.name })} 
             underlayColor="#f1f1f110" 
             >
             <View style={styles.containerRender}>
-              <Image style={styles.photoFood} source={{uri:item.photo_url}} />
+              <Image style={styles.photoFood} source={{uri: item.photo_url}} />
               <View style={styles.overflow}>
                 <Text style={styles.nameCategory}> {item.name} </Text>
-                <Text style={styles.numberRecipe}> {countNumberRecipe(item.id)} Recipes </Text>
+                {/* <Text style={styles.numberRecipe}> {countNumberRecipe(item._id)} Recipes </Text> */}
               </View>
             </View>
           </TouchableHighlight>

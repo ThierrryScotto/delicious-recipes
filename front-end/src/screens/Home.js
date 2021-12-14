@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react"
+import React, { useLayoutEffect, useEffect, useState } from "react"
 import { 
   Text, 
   View, 
@@ -8,32 +8,10 @@ import {
   FlatList,
   Dimensions 
 } from "react-native"
+import axios from 'axios';
 
 import { recipes } from "../data/dataArrays.js";
 import { getCategoryById } from "../data/MockDataAPI"
-
-
-// fetch('http://localhost:3000/ingredients', {
-
-//     method:'Get',
-//     headers:{
-//         'content-type': 'application/json'
-//     },
-
-//     body: JSON.stringify({
-
-//         name:'user 1'
-//     })
-
-// }).then(res => {
-//     return res.json()
-// })
-// .then((data) => {
-//   console.log(data)
-// })
-// .catch((error) => {
-//   console.log('ERROR')
-// })
 
 const win = Dimensions.get('window');
 const ratio = win.width/341; //541 is actual image width
@@ -44,6 +22,17 @@ const f_ratio = win.width/341; //541 is actual image width
 
 
 export default function Menu({navigation}) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/recipes')
+      .then(({ data }) => {
+        setData(data)
+      })
+      .catch((error) => console.error(error))
+    })()
+  }, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -77,16 +66,17 @@ export default function Menu({navigation}) {
         <View style={styles.list}>
           <FlatList  
             style={styles.listInner}
-            data={recipes}
+            data={data}
             numColumns={'2'}
-            keyExtractor={(item) => item.recipeId}
-            renderItem={({item}) => (
+            keyExtractor={(item) => item._id}
+            renderItem={({item}, index) => (
               <TouchableHighlight 
+                key={item} 
                 underlayColor="#f1f1f140"
                 onPress={() => navigation.navigate("Recipes", { item: item })}
                 >
                 <View style={styles.containerFlat}>
-                  <Image style={styles.image} source={{ uri:item.photo_url }} />
+                  <Image style={styles.image} source={{uri: item.photo_url }} />
                   <Text style={styles.title}> { item.title } </Text>
                   <Text style={styles.category}> {setCategory(item.categoryId)} </Text>
                 </View>
