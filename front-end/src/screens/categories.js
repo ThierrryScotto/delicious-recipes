@@ -1,13 +1,71 @@
-import React, { useLayoutEffect } from "react"
+import React, { useLayoutEffect, useEffect, useState, Component } from "react"
 import { View, Text, Image, TouchableHighlight, FlatList, StyleSheet } from "react-native"
-import { categories, recipes } from "../data/dataArrays"
-
+// import { categories, recipes } from "../data/dataArrays"
+import axios from 'axios';
 import { Dimensions } from 'react-native';
+
 const win = Dimensions.get('window');
 const ratio = win.width/500; //541 is actual image width
 
+const url_categorias = 'https://delicious-recipes-dev.herokuapp.com/v1/categories'
+const url_ingredientes = 'https://delicious-recipes-dev.herokuapp.com/v1/ingredients'
+const url_receitas = 'https://delicious-recipes-dev.herokuapp.com/v1/recipes'
+
 
 export default function Categories({ navigation }) {
+
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get(url_categorias)
+  //     .then(({ data }) => {
+  //       setData(data)
+  //     })
+  //     .catch((error) => console.error(error))
+      
+  // }, []);
+
+  const [data, setData] = useState([]);
+  const [cat, setCat] = useState([]);
+
+  useEffect(() => {
+    let receitas = []
+    let categorias = [];
+
+    Promise.all([
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/categories'),
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/recipes'),
+    ]).then((response) => {
+      const data_recipe = response[0].data
+      const data_cat = response[1].data
+
+
+      data_recipe.map(e => {
+        receitas.push(e)
+      });
+
+      categorias = data_cat.filter( reci => {
+          return reci
+      })  
+
+      setData(receitas)
+      setCat(categorias);
+    });
+  }, []);
+
+  // Get CategorieId para renderizar o nome correto da categoria
+  function numberOfRecipes(props) {
+    let numberRecipe = 0
+
+    cat.map(e => {
+      if (props == e.categoryId) {
+        numberRecipe++;
+      }                                     
+    })
+
+    return <Text style={styles.numberRecipe}>{numberRecipe}</Text>;
+}
+
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -23,30 +81,23 @@ export default function Categories({ navigation }) {
     });
   }, [navigation]);
 
-  function countNumberRecipe(id) {
-    let numberRecipe = 0;
-    recipes.map(value => { 
-      if (id === value.categoryId)
-      numberRecipe++;
-    })
-    return numberRecipe;
-  }
-
   return (
     <View style={styles.container}>
       <FlatList 
-        data={categories}
+        data={data}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => (
           <TouchableHighlight 
-            onPress={() => navigation.push("CategoriesRecipe", { categoryId: item.id, headerName:item.name })} 
+            onPress={() => navigation.push("CategoriesRecipe", { categoryId: item._id, headerName:item.name })} 
             underlayColor="#f1f1f110" 
             >
             <View style={styles.containerRender}>
-              <Image style={styles.photoFood} source={{uri:item.photo_url}} />
+              <Image style={styles.photoFood} source={{uri: item.photo_url}} />
               <View style={styles.overflow}>
                 <Text style={styles.nameCategory}> {item.name} </Text>
-                <Text style={styles.numberRecipe}> {countNumberRecipe(item.id)} Recipes </Text>
+                {
+                  numberOfRecipes(item._id)
+                } 
               </View>
             </View>
           </TouchableHighlight>

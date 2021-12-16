@@ -1,22 +1,36 @@
-import React from "react"
+import React, { useLayoutEffect, useEffect, useState, Component } from "react"
+
 import { View, Text, StyleSheet, Image, TouchableOpacity, Button, Dimensions } from "react-native"
-import { getCategoryName } from "../data/MockDataAPI"
 
-
+import axios from 'axios';
 
 export default function BodyRecipe(props) {
   const item = props.item;
   const navigation  = props.navigation;
+  console.log(item);
 
-  const getName = (id) => {
-    return getCategoryName(id)
+  const [data, setData] = useState([]);
+
+ 
+  async function sendFavorite(_fav) {
+    await axios.post('https://delicious-recipes-dev.herokuapp.com/v1/favorites', {
+      recipes: _fav
+    })
+    .then((response) => {
+      if (response.status === 201) {
+        alert(JSON.stringify(response.data))
+      }
+    })
+    .catch(error => {
+      alert(`An error has occurred ${ error.response.request._response}`);
+      setIsLoading(false);
+  });
   }
-
   return (
     <View style={styles.container}>
       
       <Text style={styles.title}> {item.title} </Text>
-      <Text style={styles.category}> {getName(item.categoryId)} </Text>
+      {/* <Text style={styles.category}> {getName(item.categoryId)} </Text> */}
 
       <View style={styles.time} >        
         <Image 
@@ -32,6 +46,13 @@ export default function BodyRecipe(props) {
         >
         <Text style={styles.buttonText}> Ver Ingredientes</Text>
       </TouchableOpacity>
+
+      {/* <TouchableOpacity 
+        style={styles.button}
+        onPress={() => sendFavorite(item)}
+        >
+        <Text style={styles.buttonText}>Favorite</Text>
+      </TouchableOpacity> */}
 
       <View style={styles.description}>
         <Text> {item.description} </Text>

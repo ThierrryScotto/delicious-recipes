@@ -18,7 +18,7 @@ export default function CaroselHeader(props) {
   const { width: windowWidth } = useWindowDimensions();
   const  item  = props.item;
   const scrollX = useRef(new Animated.Value(0)).current;
-
+  var img = ''
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.scrollContainer}>
@@ -40,14 +40,18 @@ export default function CaroselHeader(props) {
           )}
           scrollEventThrottle={1}
         >
-          {item.photosArray.map((image, imageIndex) => {
+          {item.photosArray.map((Imagem, imageIndex) => {
+            Imagem.forEach(el => {
+              img = el
+              console.log('Imagem', el)
+            })
             return (
               
               <View
                 style={styles.cardContainer}
                 key={imageIndex}
               >
-                <ImageBackground source={{ uri: image }} style={styles.card} />
+                <ImageBackground source={{ uri: img }} style={styles.card} />
                 <View style={styles.indicatorContainer}>
                   {item.photosArray.map((image, imageIndex) => {
                     const width = scrollX.interpolate({

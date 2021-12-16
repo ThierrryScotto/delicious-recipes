@@ -2,6 +2,7 @@ import React, { useEffect, useState, useLayoutEffect } from "react"
 import { Text, View, FlatList, StyleSheet, Image, TouchableHighlight, Dimensions} from "react-native"
 import { recipes } from "../data/dataArrays"
 import { getCategoryById } from "../data/MockDataAPI"
+import axios from 'axios';
 
 const win = Dimensions.get('window');
 const ratio = win.width/341; //541 is actual image width
@@ -18,10 +19,23 @@ export default function CategoriesRecipe({ navigation, route }) {
   useEffect(() => {
     let { categoryId } = route.params;
     let info = [];
-    info = recipes.filter( reci => {
-      return reci.categoryId === categoryId
-    })
-    setRecipeSelected(info);
+
+    (async () => {
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/recipes')
+      .then(({ data }) => {
+        
+        info = data.filter( reci => {
+          return reci.categoryId === categoryId
+        })
+
+        setRecipeSelected(info);
+      })
+      .catch((error) => console.error(error))
+    })()
+    
+    // info = recipes.filter( reci => {
+    //   return reci.categoryId === categoryId
+    // })
   }, [])
 
   function setCategory(id) {
@@ -45,7 +59,7 @@ export default function CategoriesRecipe({ navigation, route }) {
             <View style={styles.containerFlat}>
               <Image style={styles.image} source={{ uri:item.photo_url }} />
               <Text style={styles.title}> { item.title } </Text>
-              <Text style={styles.category}> {setCategory(item.categoryId)} </Text>
+              <Text style={styles.category}> {setCategory(item._id)} </Text>
             </View>
         </TouchableHighlight>
         )}
