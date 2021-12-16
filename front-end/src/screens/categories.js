@@ -1,4 +1,4 @@
-import React, { useLayoutEffect,  useEffect, useState  } from "react"
+import React, { useLayoutEffect, useEffect, useState, Component } from "react"
 import { View, Text, Image, TouchableHighlight, FlatList, StyleSheet } from "react-native"
 // import { categories, recipes } from "../data/dataArrays"
 import axios from 'axios';
@@ -14,16 +14,57 @@ const url_receitas = 'https://delicious-recipes-dev.herokuapp.com/v1/recipes'
 
 export default function Categories({ navigation }) {
 
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get(url_categorias)
+  //     .then(({ data }) => {
+  //       setData(data)
+  //     })
+  //     .catch((error) => console.error(error))
+      
+  // }, []);
+
   const [data, setData] = useState([]);
+  const [cat, setCat] = useState([]);
 
   useEffect(() => {
-    axios.get(url_categorias)
-      .then(({ data }) => {
-        setData(data)
-      })
-      .catch((error) => console.error(error))
-      
+    let receitas = []
+    let categorias = [];
+
+    Promise.all([
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/categories'),
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/recipes'),
+    ]).then((response) => {
+      const data_recipe = response[0].data
+      const data_cat = response[1].data
+
+
+      data_recipe.map(e => {
+        receitas.push(e)
+      });
+
+      categorias = data_cat.filter( reci => {
+          return reci
+      })  
+
+      setData(receitas)
+      setCat(categorias);
+    });
   }, []);
+
+  // Get CategorieId para renderizar o nome correto da categoria
+  function numberOfRecipes(props) {
+    let numberRecipe = 0
+
+    cat.map(e => {
+      if (props == e.categoryId) {
+        numberRecipe++;
+      }                                     
+    })
+
+    return <Text style={styles.numberRecipe}>{numberRecipe}</Text>;
+}
 
 
   useLayoutEffect(() => {
@@ -40,23 +81,6 @@ export default function Categories({ navigation }) {
     });
   }, [navigation]);
 
-  async function countNumberRecipe(id) {
-      let numberRecipe = 0;
-
-      try {
-        const recipes = await axios.get(url_receitas)
-
-        recipes.data.map(value => { 
-          if (id === value.categoryId)
-          numberRecipe++;
-        })
-      } catch (error) {
-          console.error('error',error);
-      }
-      
-      return numberRecipe;
-  }
-
   return (
     <View style={styles.container}>
       <FlatList 
@@ -71,7 +95,9 @@ export default function Categories({ navigation }) {
               <Image style={styles.photoFood} source={{uri: item.photo_url}} />
               <View style={styles.overflow}>
                 <Text style={styles.nameCategory}> {item.name} </Text>
-                {/* <Text style={styles.numberRecipe}> {countNumberRecipe(item._id)} Recipes </Text> */}
+                {
+                  numberOfRecipes(item._id)
+                } 
               </View>
             </View>
           </TouchableHighlight>

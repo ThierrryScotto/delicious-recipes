@@ -1,30 +1,72 @@
-import React from "react"
-import { View, Text, FlatList, TouchableHighlight, Image, StyleSheet, Dimensions } from "react-native"
-import { getIngredientUrl } from "../data/MockDataAPI"
-import { getIngredientName } from "../data/MockDataAPI"
-
+import React, { useLayoutEffect, useEffect, useState, Component } from "react"
+import { Animated, View, Text, FlatList, TouchableHighlight, Image, StyleSheet, Dimensions } from "react-native"
+import axios from 'axios';
 
 const win = Dimensions.get('window');
+const url_ingredientes = 'https://delicious-recipes-dev.herokuapp.com/v1/ingredients'
 
 export default function Ingredients({ navigation, route }) {
+  const [data, setData] = useState([]);
+  
   let { ingredients }  = route.params;
+
+  useEffect(() => {
+    let ingredientes = []
+
+    axios.get(url_ingredientes)
+    .then((response) => {
+      const data_recipe = response.data
+
+     
+      setData(data_recipe)
+    });
+  }, []);
+
+  function IngredienteName(props) {
+    let name = ''
+    data.forEach(e => {
+      if (e._id == props) {
+        name = e.name
+        // console.log(e.name);
+      }                                     
+    })
+    
+    return <Text style={styles.nameIngredient}>{name}</Text>;
+  }
+
+  function IngredienteUrl(props) {
+    let img = ''
+    
+    data.forEach(e => {
+      if (e._id == props) {
+        img = e.photo_url
+        console.log('foto', JSON.stringify(e.photo_url));
+      }
+    });
+
+
+    return <Image style={styles.image} source={{ uri: img }}/>
+
+  }
+  
 
   return (
     <View style={styles.container}>
       <FlatList 
         data={ingredients}
         numColumns={'2'}
-        keyExtractor={(index) => index.toString() }
+        keyExtractor={(index) => index }
         renderItem={({ item }) => (
           <View style={styles.info}>
-            <TouchableHighlight >
-              <Image 
-                style={styles.image}
-                source={{ uri: getIngredientUrl(item[0]) }}/>
-            </TouchableHighlight>
-
             <View>
-              <Text style={styles.nameIngredient}> {getIngredientName(item[0])} </Text>
+              <TouchableHighlight >
+              {
+                IngredienteUrl(item[0])
+              }
+              </TouchableHighlight>
+              {
+                IngredienteName(item[0])
+              }
               <Text style={styles.amount}> {item[1]} </Text>
             </View>
           </View>

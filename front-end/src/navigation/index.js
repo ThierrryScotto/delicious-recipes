@@ -14,64 +14,14 @@ import Ingredients from "../screens/ingredients"
 import Categories from "../screens/categories"
 import CategoriesRecipe from "../screens/categoriesRecipe"
 
+import Search from "../screens/search"
+import Cover from "../screens/Cover"
+import Favorites from "../screens/Favorites"
+
+import Login from "../screens/login"
+import Cadastro from "../screens/cadastro"
 
 const Stack = createStackNavigator();
-
-function Cover({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <ImageBackground source={require('../assets/cover.jpg')} resizeMode="cover" style={styles.image}>
-        <View style={styles.text}>
-          <Text style={styles.title}>Delicious Recipes</Text>
-          <TouchableOpacity 
-            style={styles.button} 
-            onPress={() => navigation.navigate('Home')}
-            >
-            <Text style={styles.buttonText}>Ir para a Home</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-    </View>
-  );
-}
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    justifyContent: "center"
-  },
-  title: {
-    color: "white",
-    fontSize: 42,
-    fontWeight: "bold",
-    textAlign: "center",
-    maxWidth: 200,
-    marginBottom: 15
-  },
-  text: {
-    backgroundColor: "#000000c0",
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 100,
-    borderWidth: 1,
-    marginTop: 20,
-    width: 300,
-    height: 50,
-    borderColor: "#FFF",
-  }, 
-  buttonText: {
-    color: "#FFF"
-  },
-});
 
 
 function MenuStackScreen({ navigation }) {
@@ -81,7 +31,8 @@ function MenuStackScreen({ navigation }) {
       <MenuStack.Screen name="Recipes" component={Recipe} options={{ title:"", headerTransparent:true }} />
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe"}} />
       <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredientss", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
-
+      <MenuStack.Screen name="Search" component={Search} options={{ title:"Search",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
     </MenuStack.Navigator>
   )
 }
@@ -94,9 +45,41 @@ function CategoriesStackScreen({ navigation }) {
       <MenuStack.Screen name="Recipe" component={Recipe} options={{ title:"", headerTransparent:true }} />
       <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Search" component={Search} options={{ title:"Search", headerTitleAlign: 'center',  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
     </MenuStack.Navigator>
   )
 }
+
+
+function SearchStackScreen({ navigation }) {
+  return (
+    <MenuStack.Navigator>
+      <MenuStack.Screen name="Search" component={Search} options={{ title:"Search", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Categories" component={Categories} options={{headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Recipe" component={Recipe} options={{ title:"", headerTransparent:true }} />
+      <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+   </MenuStack.Navigator>
+  )
+}
+
+function LoginStackScreen({ navigation }) {
+  return (
+    <MenuStack.Navigator>
+      <MenuStack.Screen name="Cadastro" component={Cadastro} options={{ title:"", headerTransparent:true, headerTitleAlign: 'center', headerTintColor: 'white'  }} />
+      <MenuStack.Screen name="Login" component={Login} options={{ title:"", headerTransparent:true, headerTitleAlign: 'center', headerTintColor: 'white'  }} />
+      <MenuStack.Screen name="Search" component={Search} options={{ title:"Search", headerTitleAlign: 'center'}} />
+      <MenuStack.Screen name="Categories" component={Categories} options={{headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Recipe" component={Recipe} options={{ title:"", headerTransparent:true }} />
+      <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+   </MenuStack.Navigator>
+  )
+}
+
 
 
 export default function Route() {
@@ -106,6 +89,11 @@ export default function Route() {
           <MenuDrawer.Screen  name="Cover" component={Cover} />
           <MenuDrawer.Screen  name="Home" component={MenuStackScreen} />
           <MenuDrawer.Screen  name="Categories" component={CategoriesStackScreen} />
+          <MenuDrawer.Screen  name="Pesquisar" component={SearchStackScreen} />
+          <MenuDrawer.Screen  name="Login" component={Login} />
+          <MenuDrawer.Screen  name="Cadastro" component={Cadastro} />
+          <MenuDrawer.Screen  name="Favorites" component={Favorites} />
+
         </MenuDrawer.Navigator>
       </NavigationContainer>
   )

@@ -48,7 +48,7 @@ export async function getIngredientUrl(ingredientID) {
     const ingredients = await axios.get(url_ingredientes)
     ingredients.data.map(data => {
       if (data._id == ingredientID) {
-        url = data.photo_url;
+        url = JSON.stringify(data.photo_url);
       }
     });
   } catch (error) {

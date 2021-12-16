@@ -11,14 +11,10 @@ import {
 import axios from 'axios';
 
 const win = Dimensions.get('window');
-const ratio = win.width/341;
-
-// FULLBANNER
-const f_win = Dimensions.get('window');
-const f_ratio = win.width/341; 
+const ratio = win.width/341; 
 
 
-export default function Menu({navigation}) {
+export default function Search({navigation}) {
   const [data, setData] = useState([]);
   const [categorie, setCat] = useState([]);
 
@@ -28,10 +24,12 @@ export default function Menu({navigation}) {
 
     Promise.all([
       axios.get('https://delicious-recipes-dev.herokuapp.com/v1/categories'),
-      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/recipes'),
+      // axios.get('https://delicious-recipes-dev.herokuapp.com/v1/recipes'),
+      axios.get('https://delicious-recipes-dev.herokuapp.com/v1/favorites'),
     ]).then((response) => {
       const data_recipe = response[0].data
       const data_cat = response[1].data
+      // const data_favorites = response[2].data
 
 
       data_recipe.map(e => {
@@ -59,32 +57,28 @@ export default function Menu({navigation}) {
     return <Text style={styles.category}>{cat}</Text>;
   }
   
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <TouchableHighlight 
-          underlayColor=""
-          style={styles.iconeMenu}
-          onPress={() => navigation.openDrawer()}
-          >
-          <Image 
-            style={styles.icon}
-            source={require('../assets/icons/menu.png')}
-            />
-
-        </TouchableHighlight> 
+        <View style={{ flexDirection:'row', justifyContent: 'center', alignItems:'center'}}>
+          <TouchableHighlight 
+            underlayColor=""
+            style={styles.iconeMenu}
+            onPress={() => navigation.goBack()}
+            >
+            <Image 
+              style={styles.iconBackArroy}
+              source={require('../assets/icons/backArrow.png')}
+              />
+          </TouchableHighlight> 
+        </View>
       ),
     });
   }, [navigation]);
 
-  
   return (
     <View style={styles.container}>
-        <View style={styles.fullbanner}>
-          <Image style={styles.fullbannerImg} source={require('../assets/fullbaner.jpg')} />
-        </View>
-        <View style={styles.list}>
+      <View style={styles.list}>
           <FlatList  
             style={styles.listInner}
             data={data}
@@ -116,45 +110,22 @@ export default function Menu({navigation}) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  bodyHeader: {
+    flex: 2,
+  },
+  iconeMenu: {
+    height: 30,
+    width: 35,
+    borderRadius: 100,
+    backgroundColor: "#fafafa",
     justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection:  'column',
-    backgroundColor: '#161616',
+    marginLeft: 10,
+    alignItems: 'center'
   },
-  fullbanner: {
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection:  'column'
-  },
-  fullbannerTitle: {
-    color: '#FFF',
-    fontSize: 28,
-    fontWeight: '700',
-    height: '100%',
-    textAlign: 'center',
-    maxWidth: 150,
-    alignSelf: 'center'
-  },
-  fullbannerImg: {
-    width: f_win.width,
-    height: 240 * f_ratio
-  },
-
-  list: {
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
-    marginTop: -10,
-    paddingTop: 15,
-    paddingBottom: 140,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection:  'column',
-    width: '98%'
+  iconBackArroy: {
+    height: 20,
+    width: 20,
+    padding: 3,
   },
   listInner: {
     height: '100%',
