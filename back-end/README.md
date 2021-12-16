@@ -9,7 +9,9 @@ projeto final da diciplina de Computação para Dispositivos Moveis.
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 -  [Node.js](https://nodejs.org)
--  [React-native](https://reactnative.dev)
+-  [Express](https://aws.amazon.com/pt/lambda/)
+-  [JWT](https://jwt.io/)
+-  [MongoDB](https://www.mongodb.com/)
  
 ## :information_source: Como usar
 
