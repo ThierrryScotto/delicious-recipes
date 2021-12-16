@@ -37,14 +37,14 @@ export default function BodyRecipe(props) {
           style={{marginTop: 10}}
           source={require('../assets/icons/time.png')}
         />
-        <Text style={styles.textTime}> {item.time} minutos </Text>
+        <Text style={styles.textTime}> {item.time} minutes </Text>
       </View>
 
       <TouchableOpacity 
         style={styles.button}
         onPress={() => navigation.push("Ingredients", {ingredients: item.ingredients})}
         >
-        <Text style={styles.buttonText}> Ver Ingredientes</Text>
+        <Text style={styles.buttonText}> See ingredients</Text>
       </TouchableOpacity>
 
       {/* <TouchableOpacity 

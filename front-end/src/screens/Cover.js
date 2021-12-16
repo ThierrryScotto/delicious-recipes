@@ -17,9 +17,9 @@ export default function Cover({ navigation }) {
             <Text style={styles.title}>Delicious Recipes</Text>
             <TouchableOpacity 
               style={styles.button} 
-              onPress={() => navigation.navigate('Cadastro')}
+              onPress={() => navigation.navigate('Registry')}
               >
-              <Text style={styles.buttonText}>Cadastre-se</Text>
+              <Text style={styles.buttonText}>Registry</Text>
             </TouchableOpacity>
             
           </View>

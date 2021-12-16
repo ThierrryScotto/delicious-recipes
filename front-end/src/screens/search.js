@@ -80,10 +80,6 @@ export default function Search({navigation}) {
      </TouchableHighlight>
     );
   };
-  const getItem = (item) => {
-    // Function for click on an item
-    alert('Id : ' + item._id + ' Title : ' + item.title);
-  };
 
 
   useEffect(() => {
