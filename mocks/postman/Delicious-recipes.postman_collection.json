@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "9ad75b38-ec0a-4399-9e96-eab6abfbc77d",
+		"name": "Delicious-recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "categoies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{version}}/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{version}}/categories/:categoryId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"categories",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "6191b2918a3377d4f83dcb05"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ingredients",
+			"item": [
+				{
+					"name": "ingredients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{version}}/ingredients",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ingredient by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{version}}/ingredients/:ingredientId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"ingredients",
+								":ingredientId"
+							],
+							"variable": [
+								{
+									"key": "ingredientId",
+									"value": "61a024c3b0f3237fae992127"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{version}}/recipes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recipe by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{version}}/recipes/:recipeId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"recipes",
+								":recipeId"
+							],
+							"variable": [
+								{
+									"key": "recipeId",
+									"value": "61a029e5b0f3237fae99216a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test+1@test.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{version}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{version}}/authenticate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticate"
+							],
+							"query": [
+								{
+									"key": "authorization",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "add favorites",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjRmNWU4ZDg1MGNhMTM0MDI2YWYyMSIsImlhdCI6MTYzOTMyOTc2OSwiZXhwIjoxNjM5NDE2MTY5fQ.W4y85cIvup3N5Vs4EveIqxDapleK7-qWTXNrRwyC5As",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"61b4f5e8d850ca134026af21\",\r\n    \"recipeId\": \"61b536119925726a523b6b07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{version}}/favorites",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"favorites"
+							],
+							"query": [
+								{
+									"key": "authorization",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjRmNWU4ZDg1MGNhMTM0MDI2YWYyMSIsImlhdCI6MTYzOTI1NzY2MCwiZXhwIjoxNjM5MzQ0MDYwfQ.zsSicKnjCaDnpbH45IyOOC-9hVSDe-zRGnCUiw3ZWKo",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all favorites",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjRmNWU4ZDg1MGNhMTM0MDI2YWYyMSIsImlhdCI6MTYzOTMyOTc2OSwiZXhwIjoxNjM5NDE2MTY5fQ.W4y85cIvup3N5Vs4EveIqxDapleK7-qWTXNrRwyC5As",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/{{version}}/favorites/:userId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"favorites",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "61b4f5e8d850ca134026af21"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get favorite by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjRmNWU4ZDg1MGNhMTM0MDI2YWYyMSIsImlhdCI6MTYzOTMzMTQwMCwiZXhwIjoxNjM5NDE3ODAwfQ.iYOllFohTvVYdp9le_KdYvjOpeDf88P5eVu1gaEy3aA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/{{version}}/favorites/:favoriteId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"favorites",
+								":favoriteId"
+							],
+							"variable": [
+								{
+									"key": "favoriteId",
+									"value": "61b5415ec6967926b09170df"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
