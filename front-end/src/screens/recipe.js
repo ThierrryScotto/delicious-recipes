@@ -27,7 +27,7 @@ export default function Recipe({ navigation, route}) {
 
   return (
     <ScrollView style={styles.container}>
-        <CarouselHeader item={item}/>
+      <CarouselHeader item={item}/>
       <View style={styles.bodyHeader}>
         <BodyRecipe item={item} navigation={navigation}/>
       </View>
