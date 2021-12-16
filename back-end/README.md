@@ -2,7 +2,11 @@
 
 ## Descrição do porjeto. 
 
-projeto final da diciplina de Computação para Dispositivos Moveis.
+Projeto final da diciplina de Computação para Dispositivos Moveis.
+
+A ideia principal do aplicativo é a disponibilização de receitas fáceis e simples, uma espécie de caderno de receitas compartilhadas que reunisse os tradicionais biscoitos de família e as novas descobertas na cozinha.
+
+![diagram](https://user-images.githubusercontent.com/37625040/146286564-bc504db7-f045-48ee-9c86-4a907e99ad2d.png)
 
 ## :rocket: Tecnologias 
 
@@ -22,7 +26,7 @@ Para clonar e rodar a aplicação, vai ser necessário [Git](https://git-scm.com
 $ git clone https://github.com/ThierrryScotto/delicious-recipes.git
 
 # Entre no repositório
-$ cd delicious-recipes
+$ cd delicious-recipes/back-end
 
 # Instale as dependencias
 $ npm install
