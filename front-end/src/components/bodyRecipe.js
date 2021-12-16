@@ -7,6 +7,7 @@ import axios from 'axios';
 export default function BodyRecipe(props) {
   const item = props.item;
   const navigation  = props.navigation;
+  console.log(item);
 
   const [data, setData] = useState([]);
 
@@ -46,12 +47,12 @@ export default function BodyRecipe(props) {
         <Text style={styles.buttonText}> Ver Ingredientes</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
+      {/* <TouchableOpacity 
         style={styles.button}
         onPress={() => sendFavorite(item)}
         >
-        <Text style={styles.buttonText}>Favoritar</Text>
-      </TouchableOpacity>
+        <Text style={styles.buttonText}>Favorite</Text>
+      </TouchableOpacity> */}
 
       <View style={styles.description}>
         <Text> {item.description} </Text>

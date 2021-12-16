@@ -21,6 +21,9 @@ export default function Login({ navigation }) {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+
+
+    const [user, setUser] = useState("");
   
     const onChangePasswordHandler = (password) => {
       setPassword(password);
@@ -37,23 +40,28 @@ export default function Login({ navigation }) {
         return;
       }
       setIsLoading(true);
-      await axios.post(`${baseUrl}/v1/users`, {
+      await axios.post(`${baseUrl}/v1/authenticate`, {
         password,
         email,
         })
         .then(response => { 
           if (response.status === 201) {
-            alert(`You have created: ${JSON.stringify(response.data)}`);
+            alert(`You have loged: ${JSON.stringify(response.data)}`);
 
             setIsLoading(false);
             setPassword('');
             setEmail('');
           } else {
-            throw new Error("An error has occurred");
+            var user_id = response.data.user._id
+            alert(`Loged`);
+             
+            navigation.setṔarams
+            navigation.navigate('Home', {user: user_id})
+            setIsLoading(false)                                                                                                                                  ;
           }
         })
-        .catch(error => {
-            alert(`An error has occurred ${ error.response.request._response}`);
+        .catch(response => {
+            alert(`An error has occurred ${ JSON.stringify(response.data)}`);
             setIsLoading(false);
         });
       };
@@ -101,7 +109,13 @@ export default function Login({ navigation }) {
                 disabled={isLoading}
               />
             </View>
-          
+            {/* <View style={styles.wrapper}>
+              <Button
+                title="Home"
+                onPress={() => navigation.navigate("Home")}
+                style={styles.submitButton}
+              />
+            </View> */}
           </View>
 
         </ImageBackground>

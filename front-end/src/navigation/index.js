@@ -32,7 +32,7 @@ function MenuStackScreen({ navigation }) {
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe"}} />
       <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredientss", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="Search" component={Search} options={{ title:"Search",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
-      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      {/* <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} /> */}
     </MenuStack.Navigator>
   )
 }
@@ -46,7 +46,7 @@ function CategoriesStackScreen({ navigation }) {
       <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="Search" component={Search} options={{ title:"Search", headerTitleAlign: 'center',  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
-      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      {/* <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} /> */}
     </MenuStack.Navigator>
   )
 }
@@ -60,7 +60,7 @@ function SearchStackScreen({ navigation }) {
       <MenuStack.Screen name="Recipe" component={Recipe} options={{ title:"", headerTransparent:true }} />
       <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
-      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      {/* <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} /> */}
    </MenuStack.Navigator>
   )
 }
@@ -75,7 +75,7 @@ function LoginStackScreen({ navigation }) {
       <MenuStack.Screen name="Recipe" component={Recipe} options={{ title:"", headerTransparent:true }} />
       <MenuStack.Screen name="Ingredients" component={Ingredients} options={{ title:"Ingredients", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
       <MenuStack.Screen name="CategoriesRecipe" component={CategoriesRecipe} options={{ title:"CategoriesRecipe", headerTitleAlign: 'center', headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
-      <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} />
+      {/* <MenuStack.Screen name="Favorites" component={Favorites} options={{ title:"Favorites",  headerTintColor: 'white' , headerStyle: {backgroundColor: '#161616'}}} /> */}
    </MenuStack.Navigator>
   )
 }
@@ -89,10 +89,10 @@ export default function Route() {
           <MenuDrawer.Screen  name="Cover" component={Cover} />
           <MenuDrawer.Screen  name="Home" component={MenuStackScreen} />
           <MenuDrawer.Screen  name="Categories" component={CategoriesStackScreen} />
-          <MenuDrawer.Screen  name="Pesquisar" component={SearchStackScreen} />
+          <MenuDrawer.Screen  name="Search" component={SearchStackScreen} />
           <MenuDrawer.Screen  name="Login" component={Login} />
           <MenuDrawer.Screen  name="Cadastro" component={Cadastro} />
-          <MenuDrawer.Screen  name="Favorites" component={Favorites} />
+          {/* <MenuDrawer.Screen  name="Favorites" component={Favorites} /> */}
 
         </MenuDrawer.Navigator>
       </NavigationContainer>

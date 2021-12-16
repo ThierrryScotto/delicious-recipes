@@ -103,8 +103,8 @@ export default function Cadastro({ navigation }) {
           </View>
           <View style={styles.wrapper}>
               <Button
-                title="Home"
-                onPress={() => navigation.navigate("Home")}
+                title="Login"
+                onPress={() => navigation.navigate("Login")}
                 style={styles.submitButton}
               />
           </View>

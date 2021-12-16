@@ -18,7 +18,12 @@ const f_win = Dimensions.get('window');
 const f_ratio = win.width/341; 
 
 
-export default function Menu({navigation}) {
+export default function Home(props) {
+  const user = props.item;
+  const navigation  = props.navigation;
+  console.log('params', props);
+
+
   const [data, setData] = useState([]);
   const [categorie, setCat] = useState([]);
 
